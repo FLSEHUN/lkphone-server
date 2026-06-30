@@ -1,0 +1,23 @@
+name = "lkphone-server"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+[[durable_objects.bindings]]
+name = "GROUP_ROOM"
+class_name = "GroupRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["GroupRoom"]
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[vars]
+AUTH_PUBLIC_KEY_PEM = "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArZe9KAIxGVBo0o6dS6gpdNdPVUH+6Jd5ib/5e1yVE5RFEWbWVkCxCTDtGmxnRU3Tp0pmo/ok32eRkC9KVD3222Srlg+fUuA6/yeRwrjPvoO+mzylaBhj5ugykz7Dgx5oADHM6ew/rgRN9CwAI1Je/QOynOWZYH53gRApfxznPUrzndhf6BOnUEVYEAjzilwYIyNES20qz/+PZbARDj0gvTA6Ndot6VU9gIH62oF1b/2JJA6uWAUvlkIe6RN92+dN6mNDw59AS8eN+P2+Qdzl+zXKgCOUqT3kl5PgBEZIQxF/AQMiqcIgEyACDG3jtjOqWCNux5EcxkeRdXbXsOf7qwIDAQAB-----END PUBLIC KEY-----"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sehun"
+database_id = "05d69ada-ed2f-46cf-b90b-514f60852e99"
+migrations_dir = "migrations"
